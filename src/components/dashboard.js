@@ -26,67 +26,76 @@ const Dashboard = () => {
 
   return (
     <React.Fragment>
-      <Container>
-        <h1 style={{ margin: "1.5rem 5rem", width: "50rem" }}>ENCRYPT</h1>
-        <p style={{ margin: "1.5rem 5rem", width: "50rem" }}>
-          Deck Cards Test = 1 4 7 10 13 16 19 22 25 28 3 6 9 12 15 18 21 24 27 2
-          5 8 11 14 17 20 23 26
-        </p>
-        <TextField
-          style={{ margin: "1.5rem 5rem", width: "50rem" }}
-          value={deckCards}
-          onChange={(e) => setDeckCards(e.target.value)}
-          id='standard-basic'
-          label='Cards Array'
-        />
-        <TextField
-          style={{ margin: "1.5rem 5rem", width: "50rem" }}
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          id='standard-basic'
-          label='Message'
-        />
-        <Button
-          style={{ margin: "1.5rem 5rem", width: "50rem" }}
-          onClick={() => handleEncrypt()}
-          variant='contained'
-          color='primary'
-        >
-          Encrypt
-        </Button>
-        <Text>Encrypted Message : {encryptedMessageText}</Text>
-        <Text>Key Generated : {fullKey}</Text>
-      </Container>
-      <Container>
-        <h1 style={{ margin: "1.5rem 5rem", width: "50rem" }}>DECRYPT</h1>
-        <TextField
-          style={{ margin: "1.5rem 5rem", width: "50rem" }}
-          value={messageD}
-          onChange={(e) => setMessageD(e.target.value)}
-          id='standard-basic'
-          label='Message to decrypt'
-        />
-        <TextField
-          style={{ margin: "1.5rem 5rem", width: "50rem" }}
-          value={fullKeyD}
-          onChange={(e) => setFullKeyD(e.target.value)}
-          id='standard-basic'
-          label='Key Generated'
-        />
-        <Button
-          style={{ margin: "1.5rem 5rem", width: "50rem" }}
-          onClick={() => handleDecrypt()}
-          variant='contained'
-          color='primary'
-        >
-          Decrypt
-        </Button>
-        <Text>Decrypted Message : {DecryptedMessageText}</Text>
-      </Container>
+      <ContainerRow>
+        <Container>
+          <h1 style={{ margin: "1.5rem 5rem", width: "35rem" }}>ENCRYPT</h1>
+          <p style={{ margin: "1.5rem 5rem", width: "35rem" }}>
+            Deck Cards Test = 1 4 7 10 13 16 19 22 25 28 3 6 9 12 15 18 21 24 27
+            2 5 8 11 14 17 20 23 26
+          </p>
+          <TextField
+            style={{ margin: "1.5rem 5rem", width: "35rem" }}
+            value={deckCards}
+            onChange={(e) => setDeckCards(e.target.value)}
+            id='standard-basic'
+            label='Cards Array'
+          />
+          <TextField
+            style={{ margin: "1.5rem 5rem", width: "35rem" }}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            id='standard-basic'
+            label='Message'
+          />
+          <Button
+            style={{ margin: "1.5rem 5rem", width: "35rem" }}
+            onClick={() => handleEncrypt()}
+            variant='contained'
+            color='primary'
+          >
+            Encrypt
+          </Button>
+          <Text>Encrypted Message : {encryptedMessageText}</Text>
+          <Text>Key Generated : {fullKey}</Text>
+        </Container>
+        <Container>
+          <h1 style={{ margin: "1.5rem 5rem", width: "35rem" }}>DECRYPT</h1>
+          <TextField
+            style={{ margin: "1.5rem 5rem", width: "35rem" }}
+            value={messageD}
+            onChange={(e) => setMessageD(e.target.value)}
+            id='standard-basic'
+            label='Message to decrypt'
+          />
+          <TextField
+            style={{ margin: "1.5rem 5rem", width: "35rem" }}
+            value={fullKeyD}
+            onChange={(e) => setFullKeyD(e.target.value)}
+            id='standard-basic'
+            label='Key Generated'
+          />
+          <Button
+            style={{ margin: "1.5rem 5rem", width: "35rem" }}
+            onClick={() => handleDecrypt()}
+            variant='contained'
+            color='primary'
+          >
+            Decrypt
+          </Button>
+          <Text>Decrypted Message : {DecryptedMessageText}</Text>
+        </Container>
+      </ContainerRow>
       <Spacer></Spacer>
     </React.Fragment>
   );
 };
+
+const ContainerRow = styled.div`
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+`;
 
 const Container = styled.div`
   display: flex;
@@ -106,7 +115,7 @@ const Spacer = styled.div`
 
 const styles = (theme) => ({
   textField: {
-    width: "50rem",
+    width: "35rem",
   },
 });
 
